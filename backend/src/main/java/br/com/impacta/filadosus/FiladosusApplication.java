@@ -1,4 +1,4 @@
-package br.com.impacta.backend;
+package br.com.impacta.filadosus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
