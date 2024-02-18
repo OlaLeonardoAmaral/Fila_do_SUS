@@ -1,6 +1,17 @@
 # Fila do SUS
 
-## Back-End
+---
+<div align="center">
+  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg">
+  
+  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg">
+  
+  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg">
+</div>
+
+---
+
+# Back-End
 
 ### Requisitos
 - <a href="https://efficient-sloth-d85.notion.site/Instalando-Java-17-a6636205fb13442d86998dda72710fdc">Java 17</a>
@@ -19,5 +30,31 @@ spring.datasource.password=DB_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
 ```
 
+# Funcionalidades
+
+Adicionar um paciente
+### POST `/paciente/adicionar`
+
+#### Request body
+
+```json
+{
+  "nome": "Leonardo",
+  "idade": 22,
+  "cpf": "123.123.123.12"
+}
+```
+
+#### Response body
+
+```json
+{
+  "id": 1,
+  "nome": "Leonardo",
+  "idade": 22,
+  "cpf": "123.123.123.12",
+  "status": "EM ESPERA"
+}
+```
 
 
