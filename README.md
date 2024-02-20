@@ -16,6 +16,7 @@
 ### Requisitos
 - <a href="https://efficient-sloth-d85.notion.site/Instalando-Java-17-a6636205fb13442d86998dda72710fdc">Java 17</a>
 - <a href="https://efficient-sloth-d85.notion.site/Maven-4b297322549040f1ad2bf61d6080dd0a">Maven</a>
+- <a href="https://dev.mysql.com/downloads/mysql/">MySQL v8.0.36</a>
 
 ### Configurações
 
