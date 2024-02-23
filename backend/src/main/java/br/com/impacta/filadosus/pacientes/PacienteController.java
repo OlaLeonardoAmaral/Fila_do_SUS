@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.impacta.filadosus.pacientes.errors.PacienteNotFoundException;
+import jakarta.validation.Valid;
+
 
 
 @RestController
@@ -22,9 +25,17 @@ public class PacienteController {
 
 
     @PostMapping("/adicionar")
-    public ResponseEntity<PacienteEntity> create(@RequestBody PacienteEntity pessoa) {
-        pessoa.setStatus("EM ESPERA");
-        var pessoaCreated = pacienteRepository.save(pessoa);
+    public ResponseEntity<?> create(@Valid @RequestBody PacienteEntity pessoaEntity) {
+
+        PacienteEntity pessoa = this.pacienteRepository.findPacienteByCpf(pessoaEntity.getCpf());
+        if (pessoa != null) {
+            return ResponseEntity.badRequest().body("Paciente já existe.");
+        }
+
+        String status = (pessoaEntity.getStatus() == null) ? "EM ESPERA" : pessoaEntity.getStatus();
+
+        pessoaEntity.setStatus(status);
+        var pessoaCreated = pacienteRepository.save(pessoaEntity);
         return ResponseEntity.ok().body(pessoaCreated);
     }
 
@@ -37,13 +48,22 @@ public class PacienteController {
     @GetMapping("/nome/{nome}")
     public ResponseEntity<?> findByNome(@PathVariable String nome) {
         var paciente = pacienteRepository.findPacienteByNomeContainingIgnoreCase(nome);
+
+        if (paciente.isEmpty()) {
+            throw new PacienteNotFoundException("Paciente não encontrado.");
+        }
+
         return ResponseEntity.ok().body(paciente);
     }
 
     @GetMapping("/cpf/{cpf}")
     public ResponseEntity<?> findByCpf(@PathVariable String cpf) {
-        var teste = pacienteRepository.findPacienteByCpf(cpf);
-        return ResponseEntity.ok().body(teste);
+        var paciente = pacienteRepository.findPacienteByCpf(cpf);
+        
+        if (paciente == null) {
+            throw new PacienteNotFoundException("Paciente não encontrado.");
+        }
+        return ResponseEntity.ok().body(paciente);
     }
     
     
