@@ -1,61 +1,22 @@
-# Fila do SUS
+## Fila do SUS
+Seja bem-vindo ao projeto "Fila do SUS"! Sabemos o quão desafiador e burocrático é para um paciente, acompanhar seu histórico em uma fila de um hospital público. Por isso, desenvolvemos o site Fila do SUS, uma solução ágil e eficiente para facilitar a vida dos pacientes.
 
----
-<div align="center">
-  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg">
-  
-  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg">
-  
-  <img align="center" alt="Leo-HTML" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg">
-</div>
+## Vamos começar
+Antes de começar, é necessário ter instalado em sua máquina o [Java 17](), [Maven](), [MySQL]() (preferencialmente na versão [8.0.36]()) e a sua IDE preferida. Além disso, você também pode começar simplesmente navegando pelo repositório e encontrando o que é de seu interesse. Após concluir essas instalações, você pode clonar o projeto usando o comando git clone, **configurar o application.properties** como mostra logo abaixo com as configurações do seu banco de dados e começar a trabalhar no projeto. Sinta-se à vontade para fazer alterações e nos enviar pull requests com suas modificações.
 
----
+## Configurações
+```
+├── src
+|  ├── main
+|  |   └── resources
+│  │       └── application.properties  <-
+|  └── test
+└── target
 
-# Back-End
+Exemplo
 
-### Requisitos
-- <a href="https://efficient-sloth-d85.notion.site/Instalando-Java-17-a6636205fb13442d86998dda72710fdc">Java 17</a>
-- <a href="https://efficient-sloth-d85.notion.site/Maven-4b297322549040f1ad2bf61d6080dd0a">Maven</a>
-- <a href="https://dev.mysql.com/downloads/mysql/">MySQL v8.0.36</a>
-
-### Configurações
-
-Arquivo application.properties exemplo:
-
-<img width="280" alt="image" src="https://github.com/OlaLeonardoAmaral/Fila_do_SUS/assets/86934921/96a8df1b-0a90-452a-a767-bd59fc891715">
-
-```java
 spring.datasource.url=jdbc:mysql://localhost:3306/DATA_BASE_NAME
 spring.datasource.username=DB_USERNAME
 spring.datasource.password=DB_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
 ```
-
-# Funcionalidades
-
-Adicionar um paciente
-### POST `/paciente/adicionar`
-
-#### Request body
-
-```json
-{
-  "nome": "Leonardo",
-  "idade": 22,
-  "cpf": "123.123.123.12"
-}
-```
-
-#### Response body
-
-```json
-{
-  "id": 1,
-  "nome": "Leonardo",
-  "idade": 22,
-  "cpf": "123.123.123.12",
-  "status": "EM ESPERA"
-}
-```
-
-
