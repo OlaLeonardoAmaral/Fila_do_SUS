@@ -1,4 +1,4 @@
-package br.com.impacta.filadosus.pacientes;
+package br.com.impacta.filadosus.model.paciente;
 
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Entity(name = "pacientes")
-public class PacienteEntity {
+public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,11 @@ public class PacienteEntity {
 
     @NotBlank(message = "Campo nome é obrigatório.")
     private String nome;
-    private Integer idade;
+    private int idade;
 
     @CPF(message = "CPF inválido.")
     private String cpf;
+    private String sexo;
 
     @Column(columnDefinition = "varchar(25) default 'EM ESPERA'")
     private String status;
