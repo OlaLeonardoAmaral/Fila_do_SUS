@@ -20,3 +20,18 @@ spring.datasource.username=DB_USERNAME
 spring.datasource.password=DB_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
 ```
+
+## Explore APIs Rest
+
+O aplicativo define as seguintes APIs CRUD:
+
+### Usuários
+
+| Método | Url | Descrição | Exemplo de corpo de solicitação válido | 
+| ------ | --- | --------- | -------------------------------------- |
+| POST   | /paciente/adicionar | Criar paciente | |
+| GET    | /paciente/nome/{nome} | Buscar paciente por nome | |
+| GET    | /paciente/cpf/{cpf} | Buscar paciente por CPF | |
+| GET    | /paciente/ | Retorna uma lista de usuários | |
+| PUT    | /pacicente/{id} | Atualizar o cadastro do paciente | |
+| DELETE | /pacicente/{id} | Delete paciente | |
