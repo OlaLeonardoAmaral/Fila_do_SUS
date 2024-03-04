@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -16,15 +18,19 @@ public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer pacienteId;
 
-    @NotBlank(message = "Campo nome é obrigatório.")
+    @NotBlank(message = "Campo 'Nome' é obrigatório.")
     private String nome;
     private int idade;
 
-    @CPF(message = "CPF inválido.")
+    // @CPF(message = "CPF inválido.")
     private String cpf;
     private String sexo;
+
+    @ManyToOne
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 
     @Column(columnDefinition = "varchar(25) default 'EM ESPERA'")
     private String status;

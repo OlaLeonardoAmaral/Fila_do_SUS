@@ -37,6 +37,7 @@ public class PacienteServiceImpl implements PacienteService {
         paciente.setCpf(pacienteDto.getCpf());
         paciente.setSexo(pacienteDto.getSexo());
         paciente.setStatus(pacienteDto.getStatus());
+        paciente.setHospital(pacienteDto.getHospital());
 
         paciente = this.pacienteRepository.save(paciente);
 
