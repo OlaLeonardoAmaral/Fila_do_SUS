@@ -29,9 +29,9 @@ O aplicativo define as seguintes APIs CRUD:
 
 | Método | Url | Descrição | Exemplo de corpo de solicitação válido | 
 | ------ | --- | --------- | -------------------------------------- |
-| POST   | /paciente/adicionar | Criar paciente | |
-| GET    | /paciente/nome/{nome} | Buscar paciente por nome | |
-| GET    | /paciente/cpf/{cpf} | Buscar paciente por CPF | |
-| GET    | /paciente/ | Retorna uma lista de usuários | |
-| PUT    | /pacicente/{id} | Atualizar o cadastro do paciente | |
-| DELETE | /pacicente/{id} | Delete paciente | |
+| POST   | /paciente/adicionar   | Criar paciente                   | |
+| GET    | /paciente/nome/{nome} | Buscar paciente por nome         | |
+| GET    | /paciente/cpf/{cpf}   | Buscar paciente por CPF          | |
+| GET    | /paciente/            | Retorna uma lista de pacientes   | |
+| PUT    | /pacicente/{id}       | Atualizar o cadastro do paciente | |
+| DELETE | /pacicente/{id}       | Delete paciente                  | |
