@@ -21,11 +21,11 @@ spring.datasource.password=DB_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-## Explore APIs Rest
+## Endpoints
 
-O aplicativo define as seguintes APIs CRUD:
+O aplicativo define os seguintes endpoints:
 
-### Usuários
+### Pacientes
 
 | Método | Url | Descrição | Exemplo de corpo de solicitação válido | 
 | ------ | --- | --------- | -------------------------------------- |
