@@ -1,0 +1,126 @@
+@import "../../../color-variables.scss";
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-section{
+  background-color: $bg-primary;
+  margin-top: 1rem;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+  h1{
+    color: $white;
+    font-weight: 800;
+    font-size: 40px;
+  }
+  p{
+    color: $white;
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+
+.register-section{
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+
+  h2{
+    color: $black-gray;
+    font-weight: 800;
+    font-size: 40px;
+    margin-left: 3rem;
+  }
+  p{
+    color: $black-gray;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .register-button{
+    font-size: 20px;
+    margin-top: 2rem;
+    padding: 0.50rem 1rem;
+    display: block;
+    background-color: $black-gray;
+    border: 2px solid transparent;
+    color: $white;
+    font-weight: 300;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+      background-color: $white;
+      color: $black-gray;
+      border-color: $black-gray;
+    }
+  }
+
+  .title-sus{
+    flex: 50%;
+  }
+
+  .line-between{
+    transform: rotate(90deg);
+  }
+
+  .btn-register{
+    flex: 50%;
+    padding: 2rem;
+  }
+}
+
+@media(max-width: 880px){
+  .register-section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+      margin-top: 5rem;
+    }
+
+    p{
+      width: 100%;
+    }
+
+    .line-between{
+      display: none;
+    }
+  }
+
+}
+
+@media(min-width: 1020px){
+  .register-section{
+    h2{
+      margin-left: 15%;
+    }
+
+    p{
+      width: 80%;
+    }
+  }
+}
+
+

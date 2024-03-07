@@ -1,0 +1,44 @@
+@import "../../../color-variables.scss";
+
+.app-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .crud_link.active{
+  font-weight: 800;
+  color: $primary-text;
+}
+
+.crud_link{
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  margin: 0 3rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.crud_link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: $secondary-text;
+  transition: width .3s;
+}
+
+.crud_link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+@media(max-width: 920px){
+  .app-header{
+    flex-direction: row;
+  }
+
+
+}
