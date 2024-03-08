@@ -3,189 +3,149 @@
 .login-section{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background: $bg-light-gray;
+  border-radius: 5px;
   height: 800px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
 
   .left-side{
     flex: 40%;
-    height: 250px;
+    height: 1100px;
     width: 100%;
+    border-radius: 5px;
     background-color: $bg-gray;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
-  .user-box{
-    html {
-      height: 100%;
-    }
-    body {
-      margin:0;
-      padding:0;
-      font-family: sans-serif;
-      background: linear-gradient(#141e30, #243b55);
+    h3{
+      font-weight: 500;
+      font-size: 40px;
+      color: $black-gray;
     }
 
-    .login-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 400px;
-      padding: 40px;
-      transform: translate(-50%, -50%);
-      background: rgba(0,0,0,.5);
-      box-sizing: border-box;
-      box-shadow: 0 15px 25px rgba(0,0,0,.6);
-      border-radius: 10px;
+    .form {
+      width: 300px;
+      margin: 0 auto;
     }
 
-    .login-box h2 {
-      margin: 0 0 30px;
-      padding: 0;
-      color: #fff;
-      text-align: center;
+    .form input[type="text"]{
+      margin-top: 1rem;
+      font-weight: 600;
     }
 
-    .login-box .user-box {
-      position: relative;
-    }
-
-    .login-box .user-box input {
+    .form input[type="text"],
+    .form input[type="number"]{
       width: 100%;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 30px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      outline: none;
-      background: transparent;
-    }
-    .login-box .user-box label {
-      position: absolute;
-      top:0;
-      left: 0;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      pointer-events: none;
-      transition: .5s;
-    }
-
-    .login-box .user-box input:focus ~ label,
-    .login-box .user-box input:valid ~ label {
-      top: -20px;
-      left: 0;
-      color: #03e9f4;
-      font-size: 12px;
-    }
-
-    .login-box form a {
-      position: relative;
-      display: inline-block;
-      padding: 10px 20px;
-      color: #03e9f4;
-      font-size: 16px;
-      text-decoration: none;
-      text-transform: uppercase;
-      overflow: hidden;
-      transition: .5s;
-      margin-top: 40px;
-      letter-spacing: 4px
-    }
-
-    .login-box a:hover {
-      background: #03e9f4;
-      color: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      box-shadow: 0 0 5px #03e9f4,
-                  0 0 25px #03e9f4,
-                  0 0 50px #03e9f4,
-                  0 0 100px #03e9f4;
+      box-sizing: border-box;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
     }
 
-    .login-box a span {
-      position: absolute;
-      display: block;
-    }
-
-    .login-box a span:nth-child(1) {
-      top: 0;
-      left: -100%;
+    .form select{
       width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #03e9f4);
-      animation: btn-anim1 1s linear infinite;
-    }
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid $bg-gray;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-weight: 700;
+      cursor: pointer;
+      appearance: none;
+      outline: none;
 
-    @keyframes btn-anim1 {
-      0% {
-        left: -100%;
-      }
-      50%,100% {
-        left: 100%;
-      }
-    }
-
-    .login-box a span:nth-child(2) {
-      top: -100%;
-      right: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(180deg, transparent, #03e9f4);
-      animation: btn-anim2 1s linear infinite;
-      animation-delay: .25s
-    }
-
-    @keyframes btn-anim2 {
-      0% {
-        top: -100%;
-      }
-      50%,100% {
-        top: 100%;
+      option {
+        background-color: $bg-light-gray;
+        color: $black-gray;
+        border: none;
+        padding: 10px 15px;
+        outline: none;
       }
     }
 
-    .login-box a span:nth-child(3) {
-      bottom: 0;
-      right: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(270deg, transparent, #03e9f4);
-      animation: btn-anim3 1s linear infinite;
-      animation-delay: .5s
+    .form ::placeholder {
+      font-weight: 700;
     }
 
-    @keyframes btn-anim3 {
-      0% {
-        right: -100%;
-      }
-      50%,100% {
-        right: 100%;
-      }
+    .form button {
+      margin-top: 10px;
+      padding: 15px 25px;
+      background-color: $bg-secondary;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
     }
 
-    .login-box a span:nth-child(4) {
-      bottom: -100%;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(360deg, transparent, #03e9f4);
-      animation: btn-anim4 1s linear infinite;
-      animation-delay: .75s
-    }
-
-    @keyframes btn-anim4 {
-      0% {
-        bottom: -100%;
-      }
-      50%,100% {
-        bottom: 100%;
-      }
+    .form button:hover {
+      background-color: $primary-color;
     }
   }
 
   .right-side{
     flex: 60%;
-    background-color: $white;
+    margin-left: 1rem;
+    background-color: $bg-primary;
+    border-radius: 5px;
+  }
+}
+
+@media(max-width: 970px){
+  .login-section{
+    flex-direction: column;
+    margin: 10% 0;
+    height: 1000px;
+
+    .left-side{
+      flex: 100%;
+      height: 900px;
+      margin: 2rem 0;
+    }
+
+    .right-side{
+      flex: 100%;
+      height: 900px;
+      margin-bottom: 2rem;
+    }
+  }
+
+}
+
+@media(min-width: 970px){
+  .login-section{
+    margin: 10% 0;
+    height: 900px;
+
+    .left-side{
+      height: 1000px;
+    }
+  }
+}
+
+@media(max-width: 1300px){
+  .login-section{
+
+    .left-side{
+      flex: 60%;
+    }
+  }
+}
+
+@media(min-width: 1300px){
+  .login-section{
+
+    .left-side{
+      flex: 30%;
+    }
   }
 }

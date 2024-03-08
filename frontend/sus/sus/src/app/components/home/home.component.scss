@@ -5,6 +5,8 @@ main{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  min-width: 828px;
 }
 
 .main-section{
@@ -90,7 +92,7 @@ main{
   }
 }
 
-@media(max-width: 880px){
+@media(max-width: 970px){
   .register-section{
     flex-direction: column;
     justify-content: center;
@@ -118,7 +120,7 @@ main{
     }
 
     p{
-      width: 80%;
+      width: 100%;
     }
   }
 }

@@ -2,8 +2,10 @@
 
 .app-header{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
+  min-width: 828px;
 }
 
 section .crud_link.active{
@@ -15,7 +17,7 @@ section .crud_link.active{
   display: inline-block;
   color: #000;
   text-decoration: none;
-  margin: 0 3rem;
+  margin: 0 2rem;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   cursor: pointer;
@@ -38,7 +40,14 @@ section .crud_link.active{
 @media(max-width: 920px){
   .app-header{
     flex-direction: row;
+    justify-content: space-around;
+    margin-left: 1rem;
   }
-
+  .crud-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+  }
 
 }
