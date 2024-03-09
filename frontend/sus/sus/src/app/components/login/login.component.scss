@@ -16,7 +16,7 @@
     height: 1100px;
     width: 100%;
     border-radius: 5px;
-    background-color: $bg-gray;
+    background-color: $black-light-gray;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -25,17 +25,16 @@
     h3{
       font-weight: 500;
       font-size: 40px;
-      color: $black-gray;
+      color: $white;
     }
 
     .form {
-      width: 300px;
+      width: 350px;
       margin: 0 auto;
     }
 
-    .form input[type="text"]{
+    .form .input-name{
       margin-top: 1rem;
-      font-weight: 600;
     }
 
     .form input[type="text"],
@@ -44,6 +43,7 @@
       padding: 15px;
       margin-bottom: 10px;
       border: 1px solid #ccc;
+      color: $black-gray;
       border-radius: 5px;
       box-sizing: border-box;
       font-weight: 600;
@@ -59,14 +59,17 @@
       border-radius: 5px;
       box-sizing: border-box;
       font-weight: 700;
+      color: $black-light-gray;
       cursor: pointer;
       appearance: none;
       outline: none;
 
       option {
-        background-color: $bg-light-gray;
+        background-color: $white;
         color: $black-gray;
         border: none;
+        cursor: pointer;
+        font-size: 15px;
         padding: 10px 15px;
         outline: none;
       }
@@ -77,26 +80,57 @@
     }
 
     .form button {
-      margin-top: 10px;
-      padding: 15px 25px;
-      background-color: $bg-secondary;
+      border-radius: 20px;
+      margin-top: 1rem;
+      border: 1px solid $white;
+      background-color: transparent;
       color: $white;
-      border: none;
-      border-radius: 5px;
-      font-size: 15px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 0.80rem 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
     .form button:hover {
-      background-color: $primary-color;
+      transform:rotateY(-10deg);
+      background-color: $white;
+      color: $black;
     }
   }
 
   .right-side{
     flex: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 800px;
     margin-left: 1rem;
-    background-color: $bg-primary;
+    background-color: $white;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .paragraph_t{
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        width: 90%;
+
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
 
@@ -116,6 +150,7 @@
       flex: 100%;
       height: 900px;
       margin-bottom: 2rem;
+      margin-left: 0;
     }
   }
 
@@ -134,18 +169,8 @@
 
 @media(max-width: 1300px){
   .login-section{
-
     .left-side{
-      flex: 60%;
-    }
-  }
-}
-
-@media(min-width: 1300px){
-  .login-section{
-
-    .left-side{
-      flex: 30%;
+      flex: 70%;
     }
   }
 }

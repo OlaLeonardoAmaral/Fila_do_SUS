@@ -18,10 +18,10 @@
           Cuide da sua saúde e assegure o seu direito à assistência médica quando necessário. <br>
           Registre-se!
       </p>
-      <button href="#login" class="register-button"> Cadastrar</button>
+      <button href="#login" class="register-button" (click)="loginSection('login-sec')"> Cadastrar</button>
     </div>
   </section>
-  <section class="login-section pad-70">
+  <section id="login-sec" class="login-section pad-70">
     <app-login></app-login>
   </section>
 </main>

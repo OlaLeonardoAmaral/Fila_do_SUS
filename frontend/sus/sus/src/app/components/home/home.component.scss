@@ -7,6 +7,7 @@ main{
   flex-direction: column;
   width: 100%;
   min-width: 828px;
+  max-width: 2500px;
 }
 
 .main-section{
@@ -64,18 +65,9 @@ main{
     border: 2px solid transparent;
     color: $white;
     font-weight: 300;
-    -webkit-border-radius: 5px;
     cursor: pointer;
     border-radius: 5px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-
-    &:hover{
-      background-color: $white;
-      color: $black-gray;
-      border-color: $black-gray;
-    }
+    transition: transform 0.3s ease;
   }
 
   .title-sus{
