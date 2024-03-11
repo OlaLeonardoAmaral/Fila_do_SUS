@@ -1,7 +1,5 @@
 package br.com.impacta.filadosus.model.paciente;
 
-import org.hibernate.validator.constraints.br.CPF;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

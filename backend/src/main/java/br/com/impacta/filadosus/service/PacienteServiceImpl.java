@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import br.com.impacta.filadosus.dto.PacienteDto;
 import br.com.impacta.filadosus.exception.errors.PacienteAlreadyExistsException;
 import br.com.impacta.filadosus.exception.errors.PacienteNotFoundException;
+import br.com.impacta.filadosus.model.paciente.Hospital;
 import br.com.impacta.filadosus.model.paciente.Paciente;
+import br.com.impacta.filadosus.repository.paciente.HospitalRepository;
 import br.com.impacta.filadosus.repository.paciente.PacienteRepository;
 import br.com.impacta.filadosus.utils.Utils;
 
@@ -19,6 +21,9 @@ public class PacienteServiceImpl implements PacienteService {
 
     @Autowired
     PacienteRepository pacienteRepository;
+
+    @Autowired
+    HospitalRepository hospitalRepository;
 
     @Override
     public PacienteDto save(PacienteDto pacienteDto) {
@@ -37,10 +42,18 @@ public class PacienteServiceImpl implements PacienteService {
         paciente.setCpf(pacienteDto.getCpf());
         paciente.setSexo(pacienteDto.getSexo());
         paciente.setStatus(pacienteDto.getStatus());
-        paciente.setHospital(pacienteDto.getHospital());
+
+        Integer hospitalId = pacienteDto.getHospital().getHospitalId();
+        Optional<Hospital> hospitalOptional = hospitalRepository.findById(hospitalId);
+        
+        if(hospitalOptional.isPresent()) {
+            Hospital hospital = hospitalOptional.get();
+            paciente.setHospital(hospital);
+        } else {
+            System.out.println("hospital nao encontrado");
+        }
 
         paciente = this.pacienteRepository.save(paciente);
-
         return new PacienteDto(paciente);
     }
 
