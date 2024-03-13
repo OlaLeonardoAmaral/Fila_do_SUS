@@ -9,5 +9,5 @@ import br.com.impacta.filadosus.dto.HospitalDto;
 @Service
 public interface HospitalService {
     List<HospitalDto> findAll();
-    List<HospitalDto> findHospitalByNomeContainingIgnoreCase(String nome);
+    List<HospitalDto> findHospitalByNameContainingIgnoreCase(String name);
 }

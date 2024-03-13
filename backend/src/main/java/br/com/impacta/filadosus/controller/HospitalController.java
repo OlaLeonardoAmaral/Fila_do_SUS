@@ -23,13 +23,13 @@ public class HospitalController {
 
     @GetMapping("/")
     public ResponseEntity<List<HospitalDto>> list() {
-        List<HospitalDto> hospitais = hospitalService.findAll();
-        return ResponseEntity.ok().body(hospitais);
+        List<HospitalDto> hospitals = hospitalService.findAll();
+        return ResponseEntity.ok().body(hospitals);
     }
 
     @GetMapping("/nome/{nome}")
-    public ResponseEntity<List<HospitalDto>> findByNome(@PathVariable String nome) {
-        List<HospitalDto> hospital = hospitalService.findHospitalByNomeContainingIgnoreCase(nome);
+    public ResponseEntity<List<HospitalDto>> findByName(@PathVariable String name) {
+        List<HospitalDto> hospital = hospitalService.findHospitalByNameContainingIgnoreCase(name);
         return ResponseEntity.ok().body(hospital);
     }
 }

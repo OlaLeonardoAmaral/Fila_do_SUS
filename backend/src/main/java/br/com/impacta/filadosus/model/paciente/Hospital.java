@@ -12,19 +12,19 @@ import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Data
-@Entity(name = "hospitais")
+@Entity(name = "hospitals")
 public class Hospital {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer hospitalId;
-    private String nome;
-    private String endereco;
-    private String bairro;
+    private String name;
+    private String address;
+    private String neighborhood;
     private String cep;
-    private String numero;
+    private String number;
 
     @JsonIgnore
     @OneToMany(mappedBy = "hospital")
-    private List<Paciente> pacientes;
+    private List<Patient> patients;
 }

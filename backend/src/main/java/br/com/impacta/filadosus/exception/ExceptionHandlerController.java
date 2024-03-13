@@ -4,19 +4,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.impacta.filadosus.exception.errors.PacienteAlreadyExistsException;
-import br.com.impacta.filadosus.exception.errors.PacienteNotFoundException;
+import br.com.impacta.filadosus.exception.errors.PatientAlreadyExistsException;
+import br.com.impacta.filadosus.exception.errors.PatientNotFoundException;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
 
-    @ExceptionHandler(PacienteNotFoundException.class)
-    public ResponseEntity<String> handlePacienteNotFoundException(PacienteNotFoundException e) {
+    @ExceptionHandler(PatientNotFoundException.class)
+    public ResponseEntity<String> handlePatientNotFoundException(PatientNotFoundException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
-    @ExceptionHandler(PacienteAlreadyExistsException.class)
-    public ResponseEntity<String> handlePacienteAlreadyExistsException(PacienteAlreadyExistsException e) {
+    @ExceptionHandler(PatientAlreadyExistsException.class)
+    public ResponseEntity<String> handlePatientAlreadyExistsException(PatientAlreadyExistsException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 

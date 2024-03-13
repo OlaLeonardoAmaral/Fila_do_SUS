@@ -11,16 +11,16 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-@Entity(name = "pacientes")
-public class Paciente {
+@Entity(name = "patients")
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer pacienteId;
+    private Integer patientId;
 
-    @NotBlank(message = "Campo 'Nome' é obrigatório.")
-    private String nome;
-    private int idade;
+    @NotBlank(message = "'Name' is required.")
+    private String name;
+    private int age;
 
     // @CPF(message = "CPF inválido.")
     private String cpf;

@@ -25,8 +25,8 @@ public class HospitalServiceImpl implements HospitalService {
     }
 
     @Override
-    public List<HospitalDto> findHospitalByNomeContainingIgnoreCase(String nome) {
-        return this.hospitalRepository.findHospitalByNomeContainingIgnoreCase(nome)
+    public List<HospitalDto> findHospitalByNameContainingIgnoreCase(String name) {
+        return this.hospitalRepository.findHospitalByNameContainingIgnoreCase(name)
                 .stream()
                 .map(HospitalDto::new)
                 .collect(Collectors.toList());
