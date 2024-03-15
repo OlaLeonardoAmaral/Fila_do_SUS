@@ -27,10 +27,12 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto save(PatientDto patientDto) {
-        Patient patient = this.patientRepository.findPatientByCpf(patientDto.getCpf());
+
+        String patientCpf = patientDto.getCpf();
+        Patient patient = this.patientRepository.findPatientByCpf(patientCpf);
 
         if (patient != null) {
-            throw new PatientAlreadyExistsException("Patient already exists.");
+            throw new PatientAlreadyExistsException();
         }
 
         String status = (patientDto.getStatus() == null) ? "EM ESPERA" : patientDto.getStatus();
@@ -40,7 +42,7 @@ public class PatientServiceImpl implements PatientService {
         patient.setName(patientDto.getName());
         patient.setAge(patientDto.getAge());
         patient.setCpf(patientDto.getCpf());
-        patient.setSexo(patientDto.getSexo());
+        patient.setGender(patientDto.getGender());
         patient.setStatus(patientDto.getStatus());
 
         Integer hospitalId = patientDto.getHospital().getHospitalId();
@@ -75,7 +77,7 @@ public class PatientServiceImpl implements PatientService {
                 .collect(Collectors.toList());
 
         if (patients.isEmpty()) {
-            throw new PatientNotFoundException("Patient name " + name + ", not found.");
+            throw new PatientNotFoundException();
         }
 
         return patients;
@@ -86,7 +88,7 @@ public class PatientServiceImpl implements PatientService {
         Patient patient = this.patientRepository.findPatientByCpf(cpf);
 
         if (patient == null) {
-            throw new PatientNotFoundException("Patient not found.");
+            throw new PatientNotFoundException();
         }
 
         return new PatientDto(patient);
@@ -96,7 +98,7 @@ public class PatientServiceImpl implements PatientService {
     public void deleteById(Integer id) {
         Optional<Patient> patient = this.patientRepository.findById(id);
         if (!patient.isPresent()) {
-            throw new PatientNotFoundException("Patient not found.");
+            throw new PatientNotFoundException();
         }
         patientRepository.deleteById(id);
     }
@@ -106,14 +108,14 @@ public class PatientServiceImpl implements PatientService {
         var patientOptional = this.patientRepository.findById(id).orElse(null);
 
         if (patientOptional == null) {
-            throw new PatientNotFoundException("Patient not found.");
+            throw new PatientNotFoundException();
         }
 
         Patient patient = new Patient();
         patient.setName(patientDto.getName());
         patient.setAge(patientDto.getAge());
         patient.setCpf(patientDto.getCpf());
-        patient.setSexo(patientDto.getSexo());
+        patient.setGender(patientDto.getGender());
         patient.setStatus(patientDto.getStatus()); 
 
         Utils.copyNonNullProperties(patientDto, patientOptional); 

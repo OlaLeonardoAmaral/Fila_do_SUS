@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
@@ -18,13 +17,10 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer patientId;
 
-    @NotBlank(message = "'Name' is required.")
     private String name;
     private int age;
-
-    // @CPF(message = "CPF inválido.")
     private String cpf;
-    private String sexo;
+    private String gender;
 
     @ManyToOne
     @JoinColumn(name = "hospital_id")

@@ -1,6 +1,5 @@
 package br.com.impacta.filadosus.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.impacta.filadosus.dto.PatientDto;
 import br.com.impacta.filadosus.service.PatientService;
 import jakarta.validation.Valid;
-
-
-
 
 @RestController
 @RequestMapping("/patient")
@@ -42,7 +38,6 @@ public class PatientController {
         return ResponseEntity.ok().body(patients);
     }
 
-
     @GetMapping("/name/{name}")
     public ResponseEntity<List<PatientDto>> findByName(@PathVariable String name) {
         List<PatientDto> patient = patientService.findPatientByNameContainingIgnoreCase(name);
@@ -54,13 +49,13 @@ public class PatientController {
         var patient = patientService.findPatientByCpf(cpf);
         return ResponseEntity.ok().body(patient);
     }
-    
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable Integer id){  
-        patientService.deleteById(id);  
-        return ResponseEntity.ok().body("Patient is deleted"); 
+    public ResponseEntity<String> delete(@PathVariable Integer id) {
+        patientService.deleteById(id);
+        return ResponseEntity.ok().body("Patient is deleted");
     }
-    
+
     @PutMapping("/{id}")
     public ResponseEntity<PatientDto> update(@PathVariable Integer id, @RequestBody PatientDto patient) {
         return ResponseEntity.ok().body(patientService.update(id, patient));
