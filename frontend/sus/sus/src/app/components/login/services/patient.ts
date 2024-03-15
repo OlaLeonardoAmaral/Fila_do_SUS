@@ -1,10 +1,9 @@
 
 export interface Patient {
-    pacienteId: number,
-    nome: string,
-    idade: number,
+    name: string,
+    age: number,
     cpf: string,
-    sexo: string,
+    gender: string,
     status: string,
     hospital: {
         hospitalId: number

@@ -1,8 +1,9 @@
-import { Component, NgModule } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { LoginService } from './services/login.service';
-import { NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Patient } from './services/patient';
 
 @Component({
   selector: 'app-login',
@@ -30,11 +31,11 @@ export class LoginComponent {
 
     const form = new FormData(event.target as HTMLFormElement);
 
-    const data = {
+    const data: Patient = {
       name: form.get('nome') as string,
       age: parseInt(form.get('idade') as string),
       cpf: form.get('cpf') as string,
-      sexo: "Masculino",
+      gender: "Masculino",
       status: "ESPERANDO",
       hospital: {
         hospitalId: parseInt(this.hospitalSelecionado)
