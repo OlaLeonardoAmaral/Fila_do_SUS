@@ -1,4 +1,4 @@
-INSERT INTO hospitais (nome, endereco, bairro, cep, numero) VALUES
+INSERT INTO hospitals (name, address, neighborhood, cep, number) VALUES
 ('Hospital das Clínicas', 'Av. Dr. Enéas de Carvalho Aguiar', 'Cerqueira César', '05403-000', 255),
 ('Hospital Sírio-Libanês', 'Rua Dona Adma Jafet', 'Bela Vista', '01308-050', 91),
 ('Hospital Albert Einstein', 'Av. Albert Einstein', 'Jardim Leonor', '05652-900', 627),
