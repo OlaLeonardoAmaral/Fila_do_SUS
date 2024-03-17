@@ -35,3 +35,35 @@ O aplicativo define os seguintes endpoints:
 | GET    | /paciente/            | Retorna uma lista de pacientes   | |
 | PUT    | /pacicente/{id}       | Atualizar o cadastro do paciente | |
 | DELETE | /pacicente/{id}       | Delete paciente                  | |
+
+
+## Banco de dados
+
+``` mysql
+CREATE TABLE `hospitals` (
+  `hospital_id` int NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) DEFAULT NULL,
+  `cep` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `neighborhood` varchar(255) DEFAULT NULL,
+  `number` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`hospital_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `patients` (
+  `patient_id` int NOT NULL AUTO_INCREMENT,
+  `age` int NOT NULL,
+  `cpf` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(25) DEFAULT 'EM ESPERA',
+  `hospital_id` int DEFAULT NULL,
+  PRIMARY KEY (`patient_id`),
+  KEY `FKavr69byb4acg3j289g1oq08pk` (`hospital_id`),
+  CONSTRAINT `FKavr69byb4acg3j289g1oq08pk` FOREIGN KEY (`hospital_id`) REFERENCES `hospitals` (`hospital_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+```
+
+<img width="499" alt="image" src="https://github.com/OlaLeonardoAmaral/Fila_do_SUS/assets/86934921/27689102-4a63-4cbc-8c93-a2abda8005c1">
+
+
