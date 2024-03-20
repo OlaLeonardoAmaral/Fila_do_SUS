@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { LoginService } from './services/login.service';
 import { Patient } from './services/patient';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   hospitals: any[] = [];
   hospitalSelecionado: string = '';
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, private location: Location) { }
 
   ngOnInit(): void {
     this.loginService.getAllHospital().subscribe(data => {
@@ -46,6 +47,8 @@ export class LoginComponent {
     }, error => {
       console.error(error);
     })
+
+    window.location.reload();
   }
 
   toggleForm() {

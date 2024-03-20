@@ -1,7 +1,7 @@
 <section class="login-section pad-70">
   <div class="left-side">
     <div class="login-box">
-      <h3>Login</h3>
+      <h3>Cadastrar</h3>
       <div class="form">
         <form class="register-form" (submit)="enviarDados($event)" method="post">
           <input type="text" name="nome" class="input-name" placeholder="Nome" />
@@ -13,7 +13,7 @@
             <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalId">{{ hospital.name }}</option>
           </select>
 
-          <button>Cadastrar</button>
+          <button>Enviar</button>
         </form>
       </div>
     </div>
