@@ -8,6 +8,7 @@ main{
   width: 100%;
   min-width: 828px;
   max-width: 2500px;
+  height: auto;
 }
 
 .main-section{
@@ -106,10 +107,15 @@ main{
       margin-bottom: 1.2rem;
     }
   }
-
 }
 
-@media(min-width: 1020px){
+@media(max-width: 1070px){
+  .register-section{
+    margin-top: 4rem;
+  }
+}
+
+@media(min-width: 1300px){
   .register-section{
     margin-bottom: 6rem;
 

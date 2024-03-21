@@ -15,7 +15,7 @@ section .crud_link.active{
 
 .crud_link{
   display: inline-block;
-  color: #000;
+  color: $black;
   text-decoration: none;
   margin: 0 2rem;
   font-family: "Inter", sans-serif;

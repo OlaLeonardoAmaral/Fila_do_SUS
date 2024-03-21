@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NgOptimizedImage } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { LoginComponent } from '../login/login.component';
   imports: [
     HeaderComponent,
     LoginComponent,
+    FooterComponent,
     NgOptimizedImage
   ],
   templateUrl: './home.component.html',

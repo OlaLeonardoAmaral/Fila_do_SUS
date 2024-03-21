@@ -1,0 +1,76 @@
+@import "../../../color-variables.scss";
+
+footer{
+  background: $bg-footer;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 828px;
+}
+
+.title-proj{
+  h1{
+    color: $text-soft;
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  span{
+    color: $text-soft;
+    font-weight: 300;
+    font-size: 15px;
+  }
+}
+
+.github-sec{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  img{
+    margin-right: 1rem;
+  }
+
+  span{
+    margin-right: 1.5rem;
+    color: $text-soft;
+    font-weight: 800;
+  }
+}
+
+.links-group{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  padding: 1.5rem;
+}
+
+.links-group a{
+  text-decoration: none;
+  list-style: none;
+  color: $text-soft;
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  line-height: 1.2;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.links-group a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: $secondary-color;
+  transition: width .3s;
+}
+
+.links-group a:hover::after {
+  width: 100%;
+  transition: width .3s;
+}

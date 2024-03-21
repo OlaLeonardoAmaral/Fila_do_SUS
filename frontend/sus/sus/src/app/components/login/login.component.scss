@@ -10,6 +10,7 @@
   height: 800px;
   width: 100%;
   font-family: "Inter", sans-serif;
+  margin-bottom: 8rem;
 
   .left-side{
     flex: 40%;
@@ -136,8 +137,9 @@
 
 @media(max-width: 970px){
   .login-section{
+    margin-top: 3rem;
     flex-direction: column;
-    height: 100rem;
+    height: 120rem;
 
     .left-side{
       margin: 2rem 0;
@@ -148,7 +150,23 @@
       margin-left: 0;
     }
   }
+}
 
+@media(max-width: 1070px){
+  .login-section{
+    margin-top: 4rem;
+    flex-direction: column;
+    height: 120rem;
+
+    .left-side{
+      margin: 2rem 0;
+    }
+
+    .right-side{
+      margin-bottom: 2rem;
+      margin-left: 0;
+    }
+  }
 }
 
 @media(max-width: 1300px){
