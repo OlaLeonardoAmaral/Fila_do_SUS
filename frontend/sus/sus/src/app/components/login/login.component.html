@@ -7,7 +7,14 @@
           <input type="text" name="nome" class="input-name" placeholder="Nome" />
           <input type="number" name="idade" placeholder="Idade" />
           <input type="text" name="cpf" placeholder="CPF">
-
+          
+          <select name="genero">
+            <option value="">Selecione seu gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+          
           <select name="hospitais" appArrowSelect [(ngModel)]="hospitalSelecionado">
             <option value="">Selecione um hospital</option>
             <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalId">{{ hospital.name }}</option>
