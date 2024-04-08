@@ -1,9 +1,10 @@
-package br.com.impacta.filadosus.model.paciente;
+package br.com.impacta.filadosus.domain.hospital;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.com.impacta.filadosus.domain.patient.Patient;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

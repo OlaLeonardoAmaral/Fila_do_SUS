@@ -1,13 +1,11 @@
 package br.com.impacta.filadosus.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
-import br.com.impacta.filadosus.dto.HospitalDto;
+import br.com.impacta.filadosus.dto.hospital.HospitalListResponseDTO;
 
 @Service
 public interface HospitalService {
-    List<HospitalDto> findAll();
-    List<HospitalDto> findHospitalByNameContainingIgnoreCase(String name);
+    HospitalListResponseDTO findAll();
+    HospitalListResponseDTO findHospitalByNameContainingIgnoreCase(String name);
 }

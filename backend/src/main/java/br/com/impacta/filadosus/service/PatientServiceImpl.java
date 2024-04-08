@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.impacta.filadosus.domain.hospital.Hospital;
+import br.com.impacta.filadosus.domain.patient.Patient;
+import br.com.impacta.filadosus.domain.patient.exceptions.PatientAlreadyExistsException;
+import br.com.impacta.filadosus.domain.patient.exceptions.PatientNotFoundException;
 import br.com.impacta.filadosus.dto.PatientDto;
-import br.com.impacta.filadosus.exception.errors.PatientAlreadyExistsException;
-import br.com.impacta.filadosus.exception.errors.PatientNotFoundException;
-import br.com.impacta.filadosus.model.paciente.Hospital;
-import br.com.impacta.filadosus.model.paciente.Patient;
-import br.com.impacta.filadosus.repository.paciente.HospitalRepository;
-import br.com.impacta.filadosus.repository.paciente.PacienteRepository;
+import br.com.impacta.filadosus.repository.HospitalRepository;
+import br.com.impacta.filadosus.repository.PacienteRepository;
 import br.com.impacta.filadosus.utils.Utils;
 
 @Service

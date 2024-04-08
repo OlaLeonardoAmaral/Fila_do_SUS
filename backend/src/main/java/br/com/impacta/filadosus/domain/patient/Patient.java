@@ -1,5 +1,6 @@
-package br.com.impacta.filadosus.model.paciente;
+package br.com.impacta.filadosus.domain.patient;
 
+import br.com.impacta.filadosus.domain.hospital.Hospital;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

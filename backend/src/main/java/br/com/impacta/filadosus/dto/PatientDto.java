@@ -1,7 +1,7 @@
 package br.com.impacta.filadosus.dto;
 
-import br.com.impacta.filadosus.model.paciente.Hospital;
-import br.com.impacta.filadosus.model.paciente.Patient;
+import br.com.impacta.filadosus.domain.hospital.Hospital;
+import br.com.impacta.filadosus.domain.patient.Patient;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

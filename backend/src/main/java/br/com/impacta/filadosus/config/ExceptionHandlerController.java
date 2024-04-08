@@ -1,4 +1,4 @@
-package br.com.impacta.filadosus.exception;
+package br.com.impacta.filadosus.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,22 +10,21 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.impacta.filadosus.exception.errors.PatientAlreadyExistsException;
-import br.com.impacta.filadosus.exception.errors.PatientNotFoundException;
+import br.com.impacta.filadosus.domain.patient.exceptions.PatientAlreadyExistsException;
+import br.com.impacta.filadosus.domain.patient.exceptions.PatientNotFoundException;
+import br.com.impacta.filadosus.dto.general.ErrorResponseDTO;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
 
     @ExceptionHandler(PatientNotFoundException.class)
-    public ResponseEntity<RestErrorMessage> handlePatientNotFoundException(PatientNotFoundException e) {
-        RestErrorMessage errorMessage = new RestErrorMessage(HttpStatus.NOT_FOUND, "Patient not found.");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
+    public ResponseEntity<ErrorResponseDTO> handlePatientNotFoundException(PatientNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponseDTO(exception.getMessage()));
     }
 
     @ExceptionHandler(PatientAlreadyExistsException.class)
-    public ResponseEntity<RestErrorMessage> handlePatientAlreadyExistsException(PatientAlreadyExistsException e) {
-        RestErrorMessage errorMessage = new RestErrorMessage(HttpStatus.CONFLICT, "Patient already exists");
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorMessage);
+    public ResponseEntity<ErrorResponseDTO> handlePatientAlreadyExistsException(PatientAlreadyExistsException exception) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(new ErrorResponseDTO(exception.getMessage()));
     }
 
     // @ResponseStatus(HttpStatus.BAD_REQUEST)
