@@ -12,26 +12,119 @@ main{
 }
 
 .main-section{
-  background-color: $bg-primary;
+  background-image: url('../../../assets/SUS.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: 1rem;
-  height: 250px;
+  height: 500px;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid $bg-light-gray;
 
   h1{
-    color: $white;
+    color: $primary-text;
     font-weight: 800;
     font-size: 40px;
   }
   p{
-    color: $white;
-    font-weight: 300;
+    color: $black-gray;
+    font-weight: 500;
     font-size: 20px;
   }
+
+  .main-rightSide{
+    flex: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .glass-topic{
+    flex: 20%;
+    padding: 2rem;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(14.2px);
+
+    p{
+      font-weight: 400;
+      font-size: 20px;
+      color: $black-gray;
+    }
+
+    /* Adicione este CSS em seu arquivo de estilos global ou no componente específico */
+.btn-open,
+.btn-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-open:focus,
+.btn-close:focus {
+  outline: none; /* Remover a borda de foco */
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+/* Estilos para o botão de abrir */
+.btn-open svg {
+  fill: #333; /* Cor do ícone */
+}
+
+/* Estilos para o botão de fechar */
+.btn-close svg {
+  fill: #ff0000; /* Cor do ícone */
+}
+
+
+  }
+}
+
+.crud-links{
+  a{
+    text-decoration: none;
+  }
+
+  ul li{
+    text-transform: uppercase;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: $black-gray;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+  }
+
+  ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $secondary-text;
+    transition: width .3s;
+  }
+
+  ul li:hover::after {
+    width: 100%;
+    transition: width .3s;
+  }
+
+
 }
 
 .register-section{
@@ -93,6 +186,7 @@ main{
 
     h2{
       margin-top: 5rem;
+      margin-left: 0;
     }
 
     p{

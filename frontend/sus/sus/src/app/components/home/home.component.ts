@@ -1,3 +1,4 @@
+// home.component.ts
 import { Component, ElementRef } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NgOptimizedImage } from '@angular/common';
@@ -24,5 +25,11 @@ export class HomeComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
+  }
+
+  isMenuOpen: boolean = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }
