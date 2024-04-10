@@ -20,7 +20,7 @@ main{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   font-family: 'Inter', sans-serif;
   border-bottom: 1px solid $bg-light-gray;
@@ -59,37 +59,6 @@ main{
       font-size: 20px;
       color: $black-gray;
     }
-
-    /* Adicione este CSS em seu arquivo de estilos global ou no componente específico */
-.btn-open,
-.btn-close {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-open:focus,
-.btn-close:focus {
-  outline: none; /* Remover a borda de foco */
-}
-
-.icon {
-  vertical-align: middle;
-}
-
-/* Estilos para o botão de abrir */
-.btn-open svg {
-  fill: #333; /* Cor do ícone */
-}
-
-/* Estilos para o botão de fechar */
-.btn-close svg {
-  fill: #ff0000; /* Cor do ícone */
-}
-
-
   }
 }
 

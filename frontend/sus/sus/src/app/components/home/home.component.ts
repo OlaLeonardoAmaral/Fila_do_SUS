@@ -1,4 +1,3 @@
-// home.component.ts
 import { Component, ElementRef } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NgOptimizedImage } from '@angular/common';
