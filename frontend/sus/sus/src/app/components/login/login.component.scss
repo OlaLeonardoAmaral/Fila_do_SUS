@@ -11,6 +11,7 @@
   width: 100%;
   font-family: "Inter", sans-serif;
   margin-bottom: 8rem;
+  margin-top: 3rem;
 
   .left-side{
     flex: 40%;
@@ -27,10 +28,11 @@
       font-weight: 500;
       font-size: 40px;
       color: $white;
+      margin-bottom: 1rem;
     }
 
     .form {
-      width: 350px;
+      width: 300px;
       margin: 0 auto;
     }
 
@@ -50,6 +52,7 @@
       font-weight: 600;
       cursor: pointer;
       outline: none;
+      font-size: 15px;
     }
 
     .form select{
@@ -59,6 +62,7 @@
       border: 1px solid $bg-gray;
       border-radius: 5px;
       box-sizing: border-box;
+      font-size: 15px;
       font-weight: 700;
       color: $black-light-gray;
       cursor: pointer;
@@ -81,17 +85,16 @@
     }
 
     .form button {
-      border-radius: 20px;
+      font-size: 20px;
       margin-top: 1rem;
-      border: 1px solid $white;
+      padding: 0.50rem 1rem;
+      display: block;
       background-color: transparent;
+      border: 2px solid $bg-light-gray;
       color: $white;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 0.80rem 1.5rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-weight: 500;
       cursor: pointer;
+      border-radius: 5px;
       transition: transform 0.3s ease;
     }
 
@@ -108,7 +111,7 @@
     flex-direction: column;
     justify-content: center;
     height: 40rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     background-color: $white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -121,8 +124,8 @@
       align-items: center;
 
       p {
-        font-size: 18px;
-        font-weight: 400;
+        font-size: 20px;
+        font-weight: 500;
         line-height: 1.2;
         margin-bottom: 20px;
         width: 90%;

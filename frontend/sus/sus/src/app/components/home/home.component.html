@@ -1,6 +1,6 @@
-<!-- <app-header></app-header> -->
 <main>
   <section class="main-section pad-70">
+    <app-header></app-header>
     <div class="main-rightSide">
       <div>
         <img src="/assets/logo_sus.svg" alt="logo" priority width="250" height="200">
@@ -9,32 +9,6 @@
         <h1 id="login">Bem vindo ao SUS!</h1>
         <p>Sistema único de saúde</p>
       </div>
-    </div>
-    <div class="glass-topic">
-      <section class="crud-links">
-        <!-- <button class="btn-open" (click)="toggleMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <line x1="4" y1="6" x2="20" y2="6"></line>
-           <line x1="4" y1="12" x2="20" y2="12"></line>
-           <line x1="4" y1="18" x2="20" y2="18"></line>
-          </svg>
-        </button> -->
-        <ul id="menu" [class.open]="isMenuOpen">
-          <!-- <button class="btn-close" (click)="toggleMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button> -->
-          <a href="#login-sec" (click)="loginSection('login-sec')"><li>Cadastrar</li></a>
-          <a routerLink="/" class="crud_link"><li>Pesquisar</li></a>
-          <a routerLink="/" class="crud_link"><li>Editar</li></a>
-          <a routerLink="/" class="crud_link"><li>Atualizar</li></a>
-          <a routerLink="/" class="crud_link"><li>Deletar</li></a>
-        </ul>
-      </section>
     </div>
   </section>
 
@@ -56,6 +30,9 @@
   </section>
   <section id="login-sec" class="login-section pad-70">
     <app-login></app-login>
+  </section>
+  <section id="search-sec" class="search-section pad-70">
+    <app-search></app-search>
   </section>
 </main>
 <app-footer></app-footer>

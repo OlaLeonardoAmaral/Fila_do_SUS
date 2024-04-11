@@ -15,13 +15,12 @@ main{
   background-image: url('../../../assets/SUS.png');
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 1rem;
   height: 500px;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: start;
   font-family: 'Inter', sans-serif;
   border-bottom: 1px solid $bg-light-gray;
 
@@ -53,66 +52,28 @@ main{
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10.2px);
     -webkit-backdrop-filter: blur(14.2px);
-
-    p{
-      font-weight: 400;
-      font-size: 20px;
-      color: $black-gray;
-    }
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 0.1);
   }
-}
-
-.crud-links{
-  a{
-    text-decoration: none;
-  }
-
-  ul li{
-    text-transform: uppercase;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 800;
-    color: $black-gray;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-  }
-
-  ul li::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: $secondary-text;
-    transition: width .3s;
-  }
-
-  ul li:hover::after {
-    width: 100%;
-    transition: width .3s;
-  }
-
-
 }
 
 .register-section{
-  height: 500px;
+  height: 600px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', sans-serif;
+  background: $bg-primary-dark;
 
   h2{
-    color: $black-gray;
+    color: $white;
     font-weight: 800;
     font-size: 40px;
     margin-left: 3rem;
   }
   p{
-    color: $black-gray;
+    color: $white;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
@@ -124,10 +85,10 @@ main{
     margin-top: 2rem;
     padding: 0.50rem 1rem;
     display: block;
-    background-color: $black-gray;
+    background-color: $white;
     border: 2px solid transparent;
-    color: $white;
-    font-weight: 300;
+    color: $black;
+    font-weight: 500;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease;
@@ -139,6 +100,7 @@ main{
 
   .line-between{
     transform: rotate(90deg);
+    color: $white;
   }
 
   .btn-register{

@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+
+  .left-side{
+    flex: 60%;
+  }
+
+  .right-side {
+    flex: 40%;
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 18px;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      line-height: 1.5;
+      width: 100%;
+      margin-bottom: 0.70rem;
+    }
+  }
+}
+
+

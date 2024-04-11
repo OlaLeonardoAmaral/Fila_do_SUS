@@ -3,6 +3,7 @@ import { HeaderComponent } from '../header/header.component';
 import { NgOptimizedImage } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { FooterComponent } from '../footer/footer.component';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [
     HeaderComponent,
     LoginComponent,
+    SearchComponent,
     FooterComponent,
     NgOptimizedImage
   ],
@@ -24,11 +26,5 @@ export class HomeComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
-  }
-
-  isMenuOpen: boolean = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
 }

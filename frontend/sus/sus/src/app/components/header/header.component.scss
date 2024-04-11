@@ -1,12 +1,20 @@
 @import "../../../color-variables.scss";
 
 .app-header{
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
   min-width: 828px;
   max-width: 2500px;
+  padding: 30px;
 }
 
 section .crud_link.active{
@@ -16,11 +24,12 @@ section .crud_link.active{
 
 .crud_link{
   display: inline-block;
-  color: $black;
+  color: $black-gray;
   text-decoration: none;
+  text-transform: uppercase;
   margin: 0 2rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -42,7 +51,6 @@ section .crud_link.active{
   .app-header{
     flex-direction: row;
     justify-content: space-around;
-    margin-left: 1rem;
   }
   .crud-links{
     display: flex;
