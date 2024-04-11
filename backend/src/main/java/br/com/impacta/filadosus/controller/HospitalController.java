@@ -19,7 +19,7 @@ public class HospitalController {
     @Autowired
     private HospitalService hospitalService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<HospitalListResponseDTO> list() {
         HospitalListResponseDTO hospitals = hospitalService.findAll();
         return ResponseEntity.ok().body(hospitals);

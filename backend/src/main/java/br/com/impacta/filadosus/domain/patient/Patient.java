@@ -1,6 +1,7 @@
 package br.com.impacta.filadosus.domain.patient;
 
 import br.com.impacta.filadosus.domain.hospital.Hospital;
+import br.com.impacta.filadosus.dto.patient.PatientDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,9 +10,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity(name = "patients")
+@NoArgsConstructor
 public class Patient {
 
     @Id
@@ -29,4 +32,22 @@ public class Patient {
 
     @Column(columnDefinition = "varchar(25) default 'EM ESPERA'")
     private String status;
+
+    public Patient(String name, int age, String cpf, String gender, Hospital hospital, String status) {
+        this.name = name;
+        this.age = age;
+        this.cpf = cpf;
+        this.gender = gender;
+        this.hospital = hospital;
+        this.status = status;
+    }
+
+    public Patient(PatientDTO dto) {
+        this.name = dto.getName();
+        this.age = dto.getAge();
+        this.cpf = dto.getCpf();
+        this.gender = dto.getGender();
+        this.hospital = dto.getHospital();
+        this.status = dto.getStatus();
+    }
 }

@@ -5,9 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.impacta.filadosus.domain.patient.Patient;
 
 import java.util.List;
+import java.util.Optional;
 
 
-public interface PacienteRepository extends JpaRepository<Patient, Integer>{
+public interface PatientRepository extends JpaRepository<Patient, Integer>{
     List<Patient> findPatientByNameContainingIgnoreCase(String nome);
-    Patient findPatientByCpf(String cpf);
+    Optional<Patient> findPatientByCpf(String cpf);
 }

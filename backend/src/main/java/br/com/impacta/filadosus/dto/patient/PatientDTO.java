@@ -1,4 +1,4 @@
-package br.com.impacta.filadosus.dto;
+package br.com.impacta.filadosus.dto.patient;
 
 import br.com.impacta.filadosus.domain.hospital.Hospital;
 import br.com.impacta.filadosus.domain.patient.Patient;
@@ -12,11 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PatientDto {
+public class PatientDTO {
     
     private Integer patientId;
-
-    // @Valid
 
     @NotBlank(message = "'Name' is mandatory.")
     @NotNull(message =  "Please, inform the 'name'.")
@@ -32,11 +30,11 @@ public class PatientDto {
     @NotBlank(message = "'Gender' is mandatory.")
     @NotNull(message =  "Please, inform the 'gender'.")
     private String gender;
-    private String status;
-
     private Hospital hospital;
+
+    private String status;
     
-    public PatientDto(Patient paciente) {
+    public PatientDTO(Patient paciente) {
         patientId = paciente.getPatientId();
         name       = paciente.getName();
         age      = paciente.getAge();
@@ -45,6 +43,14 @@ public class PatientDto {
         status     = paciente.getStatus();
         hospital   = paciente.getHospital();
     }
-    
+
+    public PatientDTO(String name, int age, String cpf, String gender, Hospital hospital, String status) {
+        this.name = name;
+        this.age = age;
+        this.cpf = cpf;
+        this.gender = gender;
+        this.hospital = hospital;
+        this.status = status;
+    }
     
 }

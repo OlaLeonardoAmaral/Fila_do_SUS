@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.impacta.filadosus.dto.PatientDto;
+import br.com.impacta.filadosus.dto.patient.PatientCpfDTO;
+import br.com.impacta.filadosus.dto.patient.PatientDTO;
 import br.com.impacta.filadosus.service.PatientService;
 import jakarta.validation.Valid;
 
@@ -27,26 +28,26 @@ public class PatientController {
     private PatientService patientService;
 
     @PostMapping("/create")
-    public ResponseEntity<PatientDto> create(@Valid @RequestBody PatientDto patientDto) {
-        PatientDto patientCreated = patientService.save(patientDto);
+    public ResponseEntity<PatientDTO> create(@Valid @RequestBody PatientDTO patientDto) {
+        PatientDTO patientCreated = patientService.save(patientDto);
         return ResponseEntity.ok().body(patientCreated);
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<PatientDto>> list() {
-        List<PatientDto> patients = patientService.findAll();
+    @GetMapping
+    public ResponseEntity<List<PatientDTO>> list() {
+        List<PatientDTO> patients = patientService.findAll();
         return ResponseEntity.ok().body(patients);
     }
 
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<PatientDto>> findByName(@PathVariable String name) {
-        List<PatientDto> patient = patientService.findPatientByNameContainingIgnoreCase(name);
+    public ResponseEntity<List<PatientDTO>> findByName(@PathVariable String name) {
+        List<PatientDTO> patient = patientService.findPatientByNameContainingIgnoreCase(name);
         return ResponseEntity.ok().body(patient);
     }
 
-    @GetMapping("/cpf/{cpf}")
-    public ResponseEntity<PatientDto> findByCpf(@PathVariable String cpf) {
-        var patient = patientService.findPatientByCpf(cpf);
+    @GetMapping("/cpf")
+    public ResponseEntity<PatientDTO> findByCpf(@RequestBody PatientCpfDTO patientCpfDTO) {
+        var patient = patientService.findPatientByCpf(patientCpfDTO.cpf());
         return ResponseEntity.ok().body(patient);
     }
 
@@ -57,7 +58,7 @@ public class PatientController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PatientDto> update(@PathVariable Integer id, @RequestBody PatientDto patient) {
+    public ResponseEntity<PatientDTO> update(@PathVariable Integer id, @RequestBody PatientDTO patient) {
         return ResponseEntity.ok().body(patientService.update(id, patient));
     }
 }

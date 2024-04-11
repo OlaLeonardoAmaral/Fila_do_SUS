@@ -10,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import br.com.impacta.filadosus.domain.hospital.exceptions.HospitalNotFoundException;
 import br.com.impacta.filadosus.domain.patient.exceptions.PatientAlreadyExistsException;
 import br.com.impacta.filadosus.domain.patient.exceptions.PatientNotFoundException;
 import br.com.impacta.filadosus.dto.general.ErrorResponseDTO;
@@ -27,7 +28,11 @@ public class ExceptionHandlerController {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(new ErrorResponseDTO(exception.getMessage()));
     }
 
-    // @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(HospitalNotFoundException.class)
+    public ResponseEntity<ErrorResponseDTO> handleHospitalNotFoundException(HospitalNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponseDTO(exception.getMessage()));
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
