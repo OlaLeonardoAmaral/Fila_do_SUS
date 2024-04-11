@@ -4,19 +4,19 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.impacta.filadosus.dto.PatientDto;
+import br.com.impacta.filadosus.dto.patient.PatientDTO;
 
 @Service
 public interface PatientService {
-    PatientDto save(PatientDto patientDto);
+    PatientDTO save(PatientDTO patientDto);
 
-    List<PatientDto> findAll();
+    List<PatientDTO> findAll();
 
-    List<PatientDto> findPatientByNameContainingIgnoreCase(String name);
+    List<PatientDTO> findPatientByNameContainingIgnoreCase(String name);
     
-    PatientDto findPatientByCpf(String cpf);
+    PatientDTO findPatientByCpf(String cpf);
 
-    PatientDto update(Integer id, PatientDto pacienteDto);
+    PatientDTO update(Integer id, PatientDTO pacienteDto);
 
     void deleteById(Integer id);
 }
