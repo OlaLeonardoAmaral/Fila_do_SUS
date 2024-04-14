@@ -4,6 +4,8 @@ import { NgOptimizedImage } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SearchComponent } from '../search/search.component';
+import { MatIconModule } from '@angular/material/icon';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,8 @@ import { SearchComponent } from '../search/search.component';
     LoginComponent,
     SearchComponent,
     FooterComponent,
+    MatIconModule,
+    NgStyle,
     NgOptimizedImage
   ],
   templateUrl: './home.component.html',

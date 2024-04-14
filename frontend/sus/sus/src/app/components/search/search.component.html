@@ -1,17 +1,26 @@
-<div class="container">
-  <section class="left-side">
-    <h1>Pesquisa de pacientes</h1>
-    <div class="search-bar">
-      <input type="text" placeholder="Digite o nome do paciente">
-      <button>Pesquisar</button>
+<section class="patient-section">
+  <div class="patient-search">
+    <h3>Pesquisar Paciente</h3>
+    <div class="form" id="search">
+      <input type="text" name="search" placeholder="Insira um CPF" required>
+      <button class="material-symbols-outlined">search</button>
     </div>
-  </section>
-  <section class="right-side">
-    <div id="search-results" class="patient">
-      <h2>Nome do paciente</h2>
-      <p>CPF: 123.456.789-00</p>
-      <p>Endereço: Rua do TCC, nº 10</p>
-      <p>Telefone: (00) 0000-0000</p>
+    <div class="text-search">
+      <p>Encontre informações sobre pacientes cadastrados no SUS. Insira o nome, idade ou CPF do paciente para
+        visualizar os detalhes do seu cadastro.</p><br>
     </div>
-  </section>
-</div>
+  </div>
+  <div class="patient-info">
+    <div class="card-info">
+      <h2>Geovanna Anjos</h2>
+      <p class="separator"></p>
+      <h3>Informações paciente</h3>
+      <ul>
+        <li><b>Idade: </b> 20 anos</li>
+        <li><b>CPF: </b> 123.456.789-00</li>
+        <li><b>Gênero: </b> Feminino</li>
+        <li><b>Hospital: </b> Hospital Here</li>
+      </ul>
+    </div>
+  </div>
+</section>
