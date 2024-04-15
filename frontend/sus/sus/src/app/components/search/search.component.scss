@@ -1,11 +1,13 @@
-@import url("../../../color-variables.scss");
+@use "../../../color-variables.scss" as *;
 
 .patient-section {
   background: $black-gray;
   width: 100%;
   padding: 2rem;
   margin: 2rem 0;
-  height: 50vh;
+  height: 100vh;
+  max-width: 2500px;
+  min-width: 1000px;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -28,7 +30,8 @@
     }
 
     .text-search {
-      width: 80%;
+      width: 100%;
+      margin-top: 2.5rem;
       p {
         color: $white;
         font-weight: 600;
@@ -96,10 +99,8 @@
         transition: all 0.3s ease-in-out;
 
         &:hover {
-          transform: rotate(90deg);
           color: $secondary-color;
           transition: all 0.3s ease-in-out;
-          border-radius: 100%;
         }
       }
     }
@@ -121,8 +122,8 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.3);
-      width: 60%;
-      height: 60vh;
+      width: 70%;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -168,20 +169,17 @@
     }
   }
 
-  @media (max-width: 1070px) {
-    .patient-section {
-      flex-direction: column;
-    }
-  }
+  @media (max-width: 1600px) {
+    .patient-search{
+      padding: 0;
 
-  @media (max-width: 970px) {
-    .patient-search {
       .form {
-        width: 90%;
+        width: 500px;
+      }
+
+      #search{
+        align-items: stretch;
       }
     }
-  }
-
-  @media (min-width: 1300px) {
   }
 }
