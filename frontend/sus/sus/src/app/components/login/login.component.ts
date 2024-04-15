@@ -3,10 +3,11 @@ import { Component, inject } from '@angular/core';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { LoginService } from './services/login.service';
-import { Patient } from './services/patient';
+import { Patient } from './DTOs/patient';
 import { Location } from '@angular/common';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Hospital } from './DTOs/hospitalName';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +19,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class LoginComponent {
 
-  hospitals: any[] = [];
+  hospitals: Hospital[] = [];
   hospitalSelecionado: string = '';
-  //toaster = inject(ToastrService);
+  toaster = inject(ToastrService);
 
   constructor(public loginService: LoginService,
               private router: Router,
@@ -33,8 +34,6 @@ export class LoginComponent {
   }
 
   enviarDados(event: Event): void {
-    // event.preventDefault();
-
     const form = new FormData(event.target as HTMLFormElement);
 
     const data: Patient = {
@@ -48,19 +47,19 @@ export class LoginComponent {
       }
     }
 
-    // this.loginService.createPatient(data).subscribe({
-    //   complete: () => this.toaster.success('Cadastrado com sucesso!', '', {
-    //     timeOut: 2000,
-    //     positionClass: 'toast-top-center'
-    //   }),
-    //   error: (er) => {
-    //     this.toaster.error('Falha ao cadastrar paciente.', '', {
-    //       timeOut: 3000,
-    //       positionClass: 'toast-top-center'
-    //     })
-    //     console.error(er)
-    //   }
-    // })
+    this.loginService.createPatient(data).subscribe({
+      complete: () => this.toaster.success('Cadastrado com sucesso!', '', {
+        timeOut: 2000,
+        positionClass: 'toast-top-center'
+      }),
+      error: (er) => {
+        this.toaster.error('Falha ao cadastrar paciente.', '', {
+          timeOut: 3000,
+          positionClass: 'toast-top-center'
+        })
+        console.error(er.error)
+      }
+    })
 
   }
 
