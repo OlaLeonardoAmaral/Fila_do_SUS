@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.impacta.filadosus.dto.patient.PatientCpfDTO;
@@ -46,7 +47,7 @@ public class PatientController {
     }
 
     @GetMapping("/cpf")
-    public ResponseEntity<PatientDTO> findByCpf(@RequestBody PatientCpfDTO patientCpfDTO) {
+    public ResponseEntity<PatientDTO> findByCpf(@RequestParam(name = "cpf") PatientCpfDTO patientCpfDTO) {
         var patient = patientService.findPatientByCpf(patientCpfDTO.cpf());
         return ResponseEntity.ok().body(patient);
     }
