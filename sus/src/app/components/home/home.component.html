@@ -1,0 +1,38 @@
+<main>
+  <section class="main-section pad-70">
+    <app-header></app-header>
+    <div class="main-rightSide">
+      <div>
+        <img src="/assets/logo_sus.svg" alt="logo" priority width="250" height="200">
+      </div>
+      <div>
+        <h1 id="login">Bem vindo ao SUS!</h1>
+        <p>Sistema único de saúde</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="register-section pad-70">
+    <div class="title-sus">
+      <h2>Por que se cadastrar no SUS?</h2>
+    </div>
+    <div class="line-between">
+      ____________________________
+    </div>
+    <div class="btn-register">
+      <p>
+          Ao se cadastrar, você contribui para fortalecer um dos maiores sistemas de saúde do mundo, promovendo a equidade e a solidariedade. <br><br> Não espere até precisar de atendimento médico para se cadastrar no SUS.<br><br>
+          Cuide da sua saúde e assegure o seu direito à assistência médica quando necessário. <br>
+          Registre-se!
+      </p>
+      <button href="#login" class="register-button" (click)="loginSection('login-sec')"> Cadastrar</button>
+    </div>
+  </section>
+  <section id="login-sec" class="login-section pad-70">
+    <app-login></app-login>
+  </section>
+  <section id="search-sec" class="search-section">
+    <app-search></app-search>
+  </section>
+</main>
+<app-footer></app-footer>

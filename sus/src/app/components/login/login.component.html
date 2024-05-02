@@ -1,0 +1,41 @@
+<section class="login-section pad-70">
+  <div class="left-side">
+    <div class="login-box">
+      <h3>Cadastrar</h3>
+      <div class="form">
+        <form class="register-form" (submit)="enviarDados($event)" method="post">
+          <input id="ipt" type="text" name="nome" class="input-name" placeholder="Nome" />
+          <input id="ipt" type="number" name="idade" placeholder="Idade" />
+          <input id="ipt" type="text" name="cpf" placeholder="CPF">
+
+          <select name="genero">
+            <option value="">Selecione seu gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+
+          <select name="hospitais" appArrowSelect [(ngModel)]="hospitalSelecionado">
+            <option value="">Selecione um hospital</option>
+            <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalId">{{ hospital.name }}</option>
+          </select>
+
+          <button>Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="paragraph_t">
+      <p>O Sistema Único de Saúde (SUS) é uma conquista essencial para o povo brasileiro, oferecendo serviços de saúde
+        gratuitos e abrangentes em todo o país. Com sua base sólida nos princípios da universalidade, integralidade e
+        equidade, o SUS garante que todos, independentemente de sua condição financeira, tenham acesso aos cuidados de
+        saúde de que precisam.</p><br>
+      <p> Ao se cadastrar no SUS, os cidadãos garantem acesso a uma gama completa de serviços de saúde, desde cuidados
+        preventivos até tratamentos complexos. O cadastro também permite que o sistema mantenha registros médicos
+        precisos e acessíveis, facilitando o acompanhamento da saúde do indivíduo ao longo do tempo.</p><br>
+      <p> Em resumo, cadastrar-se no SUS é essencial para garantir que todos tenham acesso a serviços de saúde de
+        qualidade, promovendo o bem-estar e a igualdade de oportunidades em todo o Brasil.</p>
+    </div>
+  </div>
+</section>

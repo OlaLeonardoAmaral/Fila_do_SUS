@@ -1,0 +1,158 @@
+@use "../../../color-variables.scss" as *;
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-width: 1000px;
+  max-width: 2500px;
+  height: auto;
+}
+
+.main-section{
+  background-image: url('../../../assets/SUS.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  font-family: 'Inter', sans-serif;
+  border-bottom: 1px solid $bg-light-gray;
+
+  h1{
+    color: $primary-text;
+    font-weight: 800;
+    font-size: 40px;
+  }
+  p{
+    color: $black-gray;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .main-rightSide{
+    flex: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .glass-topic{
+    flex: 20%;
+    padding: 2rem;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(14.2px);
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.register-section{
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  background: $bg-primary-dark;
+  margin-bottom: 5rem;
+
+  h2{
+    color: $white;
+    font-weight: 800;
+    font-size: 40px;
+    margin-left: 3rem;
+  }
+  p{
+    color: $white;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .register-button{
+    font-size: 20px;
+    margin-top: 2rem;
+    padding: 0.50rem 1rem;
+    display: block;
+    background-color: $white;
+    border: 2px solid transparent;
+    color: $black;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .title-sus{
+    flex: 50%;
+  }
+
+  .line-between{
+    transform: rotate(90deg);
+    color: $white;
+  }
+
+  .btn-register{
+    flex: 50%;
+    padding: 2rem;
+  }
+}
+
+@media(max-width: 970px){
+  .register-section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+      margin-top: 5rem;
+      margin-left: 0;
+    }
+
+    p{
+      width: 100%;
+    }
+
+    .line-between{
+      display: none;
+    }
+
+    .register-button{
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
+@media(max-width: 1070px){
+  .register-section{
+    margin-top: 4rem;
+  }
+}
+
+@media(min-width: 1300px){
+  .register-section{
+    margin-bottom: 6rem;
+
+    h2{
+      margin-left: 15%;
+    }
+
+    p{
+      width: 100%;
+    }
+  }
+}
+
+

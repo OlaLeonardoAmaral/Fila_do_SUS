@@ -1,0 +1,200 @@
+@use "../../../color-variables.scss" as *;
+
+.login-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: $bg-light-gray;
+  border-radius: 5px;
+  height: 800px;
+  max-width: 2500px;
+  min-width: 1000px;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 6rem;
+  margin-top: 3rem;
+
+  .left-side{
+    flex: 45%;
+    height: 55rem;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $black-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    h3{
+      font-weight: 500;
+      font-size: 40px;
+      color: $white;
+      margin-bottom: 1rem;
+    }
+
+    .form {
+      width: 300px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form .input-name{
+      margin-top: 1rem;
+    }
+
+    .form input[type="number"]{
+      -webkit-appearance: textfield;
+      appearance: textfield;
+      width: 100px;
+
+      &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+        margin: 0;
+        -webkit-appearance: none;
+      }
+    }
+
+    .form input[type="text"],
+    .form input[type="number"]{
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      color: $white;
+      border: none;
+      border-bottom: 1px solid $bg-light-gray;
+      background: transparent;
+      box-sizing: border-box;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .form select{
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      border: none;
+      border-bottom: 1px solid $bg-light-gray;
+      background: transparent;
+      font-weight: 700;
+      color: $white;
+      cursor: pointer;
+      appearance: none;
+      outline: none;
+
+      option {
+        background-color: $white;
+        color: $black-gray;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 15px;
+        outline: none;
+      }
+    }
+
+    .form ::placeholder {
+      font-weight: 700;
+      color: $white;
+      font-size: 16px;
+    }
+
+    .form button {
+      font-size: 20px;
+      margin-top: 1rem;
+      padding: 0.50rem 1rem;
+      display: block;
+      background-color: $white;
+      border: none;
+      color: $black;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .right-side{
+    flex: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40rem;
+    margin-left: 2rem;
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .paragraph_t{
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        width: 90%;
+
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 970px){
+  .login-section{
+    margin-top: 3rem;
+    flex-direction: column;
+    height: 120rem;
+
+    .left-side{
+      margin: 2rem 0;
+    }
+
+    .right-side{
+      margin-bottom: 2rem;
+      margin-left: 0;
+    }
+  }
+}
+
+@media(max-width: 1070px){
+  .login-section{
+    margin-top: 4rem;
+    flex-direction: column;
+    height: 120rem;
+
+    .left-side{
+      margin: 2rem 0;
+    }
+
+    .right-side{
+      margin-bottom: 2rem;
+      margin-left: 0;
+    }
+  }
+}
+
+@media(max-width: 1300px){
+  .login-section{
+    .left-side{
+      flex: 70%;
+    }
+    .right-side {
+      flex: 70%;
+
+      .paragraph_t{
+        height: 600px;
+      }
+    }
+  }
+}
