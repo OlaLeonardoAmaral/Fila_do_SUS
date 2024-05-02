@@ -10,16 +10,16 @@
         visualizar os detalhes do seu cadastro.</p><br>
     </div>
   </div>
-  <div class="patient-info" >
+  <div class="patient-info" *ngIf="patientData">
     <div class="card-info">
-      <h2>Geovanna anjos</h2>
+      <h2>{{patientData.name}}</h2>
       <p class="separator"></p>
       <h3>Informações paciente</h3>
       <ul>
-        <li><b>Idade: </b> 30 anos</li>
-        <li><b>CPF: </b> 6666666666666666</li>
-        <li><b>Gênero: </b> feminino</li>
-        <li><b>Hospital: </b> here hospital</li>
+        <li><b>Idade: </b>{{patientData.age}}</li>
+        <li><b>CPF: </b> {{patientData.cpf}}</li>
+        <li><b>Gênero: </b> {{patientData.gender}}</li>
+        <li><b>Hospital: </b> {{patientData.hospital.name}}</li>
       </ul>
       <div class="btn-edit-delete">
         <button class="btn-edit">
