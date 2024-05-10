@@ -12,15 +12,25 @@
   </div>
   <div class="patient-info" *ngIf="patientData">
     <div class="card-info">
-      <h2>{{ patientData.name }}</h2>
+      <h2>{{patientData.name}}</h2>
       <p class="separator"></p>
       <h3>Informações paciente</h3>
       <ul>
-        <li><b>Idade: </b> {{ patientData.age }}</li>
-        <li><b>CPF: </b> {{ patientData.cpf }}</li>
-        <li><b>Gênero: </b> {{ patientData.gender }}</li>
-        <li><b>Hospital: </b> {{ patientData.hospital.name }}</li>
+        <li><b>Idade: </b>{{patientData.age}}</li>
+        <li><b>CPF: </b> {{patientData.cpf}}</li>
+        <li><b>Gênero: </b> {{patientData.gender}}</li>
+        <li><b>Hospital: </b> {{patientData.hospital.name}}</li>
       </ul>
+      <div class="btn-edit-delete">
+        <button class="btn-edit">
+          <h4>Editar</h4>
+          <span class="material-symbols-outlined">edit</span>
+        </button>
+        <button class="btn-delete">
+          <h4>Deletar</h4>
+          <span class="material-symbols-outlined">edit</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
