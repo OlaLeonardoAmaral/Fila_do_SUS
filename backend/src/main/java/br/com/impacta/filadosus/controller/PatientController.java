@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.impacta.filadosus.dto.general.ResponseMessage;
 import br.com.impacta.filadosus.dto.patient.PatientCpfDTO;
 import br.com.impacta.filadosus.dto.patient.PatientDTO;
 import br.com.impacta.filadosus.service.PatientService;
@@ -53,9 +54,9 @@ public class PatientController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable Integer id) {
+    public ResponseEntity<ResponseMessage> delete(@PathVariable Integer id) {
         patientService.deleteById(id);
-        return ResponseEntity.ok().body("Patient is deleted");
+        return ResponseEntity.ok().body(new ResponseMessage("Patient is deleted"));
     }
 
     @PutMapping("/{id}")
