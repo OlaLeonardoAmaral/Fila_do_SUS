@@ -10,7 +10,7 @@
         visualizar os detalhes do seu cadastro.</p><br>
     </div>
   </div>
-  <div class="patient-info" *ngIf="patientData">
+  <div class="patient-info" >
     <div class="card-info">
       <h2>{{patientData.name}}</h2>
       <p class="separator"></p>
@@ -21,11 +21,45 @@
         <li><b>Gênero: </b> {{patientData.gender}}</li>
         <li><b>Hospital: </b> {{patientData.hospital.name}}</li>
       </ul>
-      <div class="btn-edit-delete">
-        <button class="btn-edit">
+      <div class="btn-edit-delete" id="pop-up-container">
+        <button class="btn-edit" (click)="togglePopUp()">
           <h4>Editar</h4>
           <span class="material-symbols-outlined">edit</span>
         </button>
+        <div *ngIf="showPopUp" class="pop-up">
+          <h5 class="edit-patient">Editar Paciente</h5>
+          <div class="form">
+            <form class="register-form"  method="post">
+              <input id="ipt" type="text" name="nome" class="input-name" placeholder="Nome" />
+              <input id="ipt" type="number" name="idade" placeholder="Idade" />
+              <input id="ipt" type="text" name="cpf" placeholder="CPF">
+
+              <select name="genero">
+                <option value="">Selecione seu gênero</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+              </select>
+
+              <select name="hospitais" appArrowSelect >
+                <option value="">Selecione um hospital</option>
+                <option >Here</option>
+                <option >There</option>
+              </select>
+            </form>
+          </div>
+          <div class="btns-pop-up">
+            <button class="btn-edit-pop">
+              <h4>Salvar</h4>
+              <span class="material-symbols-outlined">save</span>
+            </button>
+            <button (click)="togglePopUp()" class="btn-close-pop">
+              <h4>Cancelar</h4>
+              <span class="material-symbols-outlined">cancel</span>
+            </button>
+
+          </div>
+        </div>
         <button class="btn-delete" (click)="deletePatient(patientData.patientId)">
           <h4>Deletar</h4>
           <span class="material-symbols-outlined">delete</span>

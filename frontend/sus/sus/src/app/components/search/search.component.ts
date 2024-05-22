@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './search.component.scss'
 })
 export class SearchComponent {
-
+  showPopUp = false;
   patientData: any;
   toaster = inject(ToastrService);
 
@@ -48,5 +48,9 @@ export class SearchComponent {
         console.error(er.error)
       }
     })
+  }
+
+  togglePopUp() {
+    this.showPopUp = !this.showPopUp;
   }
 }

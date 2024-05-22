@@ -1,10 +1,9 @@
 import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
 import { LoginService } from './services/login.service';
 import { Patient } from './DTOs/patient';
-import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hospital } from './DTOs/hospitalName';
