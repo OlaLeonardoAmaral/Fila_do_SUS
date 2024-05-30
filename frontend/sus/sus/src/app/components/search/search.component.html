@@ -10,7 +10,7 @@
         visualizar os detalhes do seu cadastro.</p><br>
     </div>
   </div>
-  <div class="patient-info" >
+  <div class="patient-info" *ngIf="patientData">
     <div class="card-info">
       <h2>{{patientData.name}}</h2>
       <p class="separator"></p>
@@ -29,27 +29,28 @@
         <div *ngIf="showPopUp" class="pop-up">
           <h5 class="edit-patient">Editar Paciente</h5>
           <div class="form">
-            <form class="register-form"  method="post">
-              <input id="ipt" type="text" name="nome" class="input-name" placeholder="Nome" />
-              <input id="ipt" type="number" name="idade" placeholder="Idade" />
-              <input id="ipt" type="text" name="cpf" placeholder="CPF">
+            <form class="register-form" #form="ngForm" (ngSubmit)="editPatient(form)">
+              <input id="ipt" type="text" name="nome" class="input-name" placeholder="Nome" value={{patientData.name}} [(ngModel)]="patientData.name"/>
+              <input id="ipt" type="number" name="idade" placeholder="Idade" value={{patientData.age}} [(ngModel)]="patientData.age"/>
+              <input id="ipt" type="text" name="cpf" placeholder="CPF" value={{patientData.cpf}} [(ngModel)]="patientData.cpf"/>
 
-              <select name="genero">
-                <option value="">Selecione seu gênero</option>
+              <select name="genero" [(ngModel)]="patientData.gender">
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
                 <option value="Outro">Outro</option>
-              </select>
+              </select>    
 
-              <select name="hospitais" appArrowSelect >
+              <select name="hospitais" appArrowSelect [(ngModel)]="selectedHospitalId">
                 <option value="">Selecione um hospital</option>
-                <option >Here</option>
-                <option >There</option>
+                <option *ngFor="let hospital of hospitals" [value]="hospital.hospitalId">
+                  {{ hospital.name }}
+                </option>
               </select>
+              
             </form>
           </div>
           <div class="btns-pop-up">
-            <button class="btn-edit-pop">
+            <button class="btn-edit-pop" (click)="editPatient(form)">
               <h4>Salvar</h4>
               <span class="material-symbols-outlined">save</span>
             </button>
@@ -57,7 +58,6 @@
               <h4>Cancelar</h4>
               <span class="material-symbols-outlined">cancel</span>
             </button>
-
           </div>
         </div>
         <button class="btn-delete" (click)="deletePatient(patientData.patientId)">
