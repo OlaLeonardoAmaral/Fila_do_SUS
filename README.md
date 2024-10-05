@@ -18,7 +18,7 @@ Antes de iniciar, você precisará instalar em sua máquina as seguintes ferrame
 Após a instalação, clone o projeto usando o comando:
 
 ```bash
-git clone <url-do-repositório>
+git clone https://github.com/OlaLeonardoAmaral/Fila_do_SUS.git
 ```
 
 Em seguida, configure o arquivo `application.properties` conforme o exemplo abaixo, utilizando as informações do seu banco de dados:
