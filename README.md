@@ -76,12 +76,3 @@ O aplicativo possui os seguintes endpoints para gerenciar pacientes:
 
 Durante o desenvolvimento deste projeto, tive a oportunidade de **construir o banco de dados e desenvolver o backend**, utilizando tecnologias como **Spring Boot** e **MySQL**. Essa experiência não apenas aprimorou minhas habilidades em programação, mas também me permitiu compreender melhor a arquitetura de sistemas e a interação entre frontend e backend. A colaboração com a Giovanna, que ficou responsável pelo frontend, foi fundamental para garantir uma interface intuitiva e eficiente, tornando o projeto mais completo e funcional.
 
----
-
-## 🤝 Contribuições
-
-Sinta-se à vontade para fazer alterações e enviar pull requests com suas modificações! A colaboração é sempre bem-vinda e pode enriquecer ainda mais este projeto.
-
----
-
-**Agradecemos por visitar nosso projeto!** Se você tiver alguma dúvida ou sugestão, não hesite em entrar em contato.
